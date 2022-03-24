@@ -28,4 +28,28 @@ class HomeController extends Controller
             'sendingCreditsLimit' => $sendingCreditsLimit,
         ]);
     }
+
+    public function quotes(){
+        return view('quotes');
+    }
+
+    public function support(){
+        return view('support');
+    }
+
+    public function customers(){
+        return view('customers');
+    }
+
+    public function serviceproviders(){
+        return view('serviceproviders');
+    }
+
+    public function servicecategories(){
+        return view('servicecategories');
+    }
+
+    public function supportchat(){
+        return view('supportchat');
+    }
 }

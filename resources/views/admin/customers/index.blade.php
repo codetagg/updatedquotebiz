@@ -11,7 +11,7 @@
 				<h1>
 					<span class="text-semibold"><span class="material-icons-round">
                 format_list_bulleted
-                </span> {{ trans('messages.customers') }}</span>
+                </span> Admin</span>
 				</h1>				
 			</div>
 
@@ -34,10 +34,10 @@
 								<option value="customers.updated_at">{{ trans('messages.updated_at') }}</option>
 							</select>										
 							<input type="hidden" name="sort_direction" value="desc" />
-<button type="button" class="btn btn-xs sort-direction" data-popup="tooltip" title="{{ trans('messages.change_sort_direction') }}" role="button" class="btn btn-xs">
-								<span class="material-icons-outlined desc">
-sort
-</span>
+							<button type="button" class="btn btn-xs sort-direction" data-popup="tooltip" title="{{ trans('messages.change_sort_direction') }}" role="button" class="btn btn-xs">
+							<span class="material-icons-outlined desc">
+							sort
+							</span>
 							</button>
 						</span>									
 						<span class="text-nowrap">

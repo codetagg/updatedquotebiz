@@ -40,4 +40,8 @@ class HomeController extends Controller
             'sendingDomainsCount' => SendingDomain::count(),
         ]);
     }
+
+    public function servicecategories(){
+        return view('admin.servicecategories');
+    }
 }

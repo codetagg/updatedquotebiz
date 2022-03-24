@@ -35,6 +35,33 @@ class CustomerController extends Controller
         ]);
     }
 
+    public function serviceproviders(Request $request){
+        $customers = \Acelle\Model\Customer::search($request)
+            ->filter($request);
+         return view('admin.customers.serviceproviders', [
+            'customers' => $customers,
+        ]);
+    }
+
+    public function customers(Request $request){
+         $customer = $request->user()->admin;
+        // $campaigns = $customer->campaigns();
+           if (\Gate::denies('read', new \Acelle\Model\Customer())) {
+            return $this->notAuthorized();
+        }
+
+        // If admin can view all customer
+        if (!$request->user()->admin->can("readAll", new \Acelle\Model\Customer())) {
+            $request->merge(array("admin_id" => $request->user()->admin->id));
+        }
+         $customers = \Acelle\Model\Customer::all();
+        // dd($customers);
+         return view('admin.customers.customers', [
+            'customers' => $customers,
+        ]);
+        
+    }
+
     /**
      * Display a listing of the resource.
      *

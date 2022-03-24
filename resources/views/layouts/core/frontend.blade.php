@@ -109,7 +109,7 @@
 		})
 			
 	</script>
-
+    @yield('script')
 	{!! \Acelle\Model\Setting::get('custom_script') !!}
 </body>
 </html>
