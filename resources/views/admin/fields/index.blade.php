@@ -37,7 +37,7 @@ fact_check
 	@endif
 
 	<form action="{{ action('Admin\FieldController@store', $list->uid) }}" class="listing-form"
-		sort-urla="{{ action('Admin/FieldController@sort', $list->uid) }}"
+		sort-urla="{{ action('Admin\FieldController@sort', $list->uid) }}"
 		per-page="1"
 		method="POST"
 	>
@@ -89,7 +89,7 @@ fact_check
 						<td>
 							@if ($item->tag != 'EMAIL')
 								@if (is_object(Acelle\Model\Field::findByUid($item->uid)))
-									<a no-ajax="true" href="{{ action('Admin/FieldController@delete', ['list_uid' => $list->uid, 'uid' => $item->uid]) }}" link-confirm="{!! trans('messages.delete_field_alert') !!}" class="btn bg-danger-400 remove-field-button">
+									<a no-ajax="true" href="{{ action('Admin\FieldController@delete', ['list_uid' => $list->uid, 'uid' => $item->uid]) }}" link-confirm="{!! trans('messages.delete_field_alert') !!}" class="btn bg-danger-400 remove-field-button">
 										<span class="material-icons-outlined">
 delete_outline
 </span>
@@ -132,23 +132,23 @@ delete_outline
 		<br />
 		<h4>{{ trans('messages.add_field') }}</h4>
 		<div>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "text"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="text">
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "text"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="text">
 				<i class="icon-font-size2"></i> {{ trans('messages.text_field') }}
 			</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "number"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="number">
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "number"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="number">
 				<i class="icon-sort-numeric-asc"></i> {{ trans('messages.number_field') }}
 			</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "dropdown"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="dropdown">
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "dropdown"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="dropdown">
 				<i class="icon-menu2"></i> {{ trans('messages.dropdown_field') }}
 			</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "multiselect"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="multiselect"><i class="icon-menu3"></i> {{ trans('messages.multiselect_field') }}</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "checkbox"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="checkbox"><i class="icon-checkbox-partial2"></i> {{ trans('messages.checkbox_field') }}</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "radio"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="radio"><i class="icon-circles"></i> {{ trans('messages.radio_field') }}</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "date"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="date"><i class="icon-calendar52"></i> {{ trans('messages.date_field') }}</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "datetime"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="datetime"><span class="material-icons-outlined">
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "multiselect"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="multiselect"><i class="icon-menu3"></i> {{ trans('messages.multiselect_field') }}</span>
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "checkbox"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="checkbox"><i class="icon-checkbox-partial2"></i> {{ trans('messages.checkbox_field') }}</span>
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "radio"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="radio"><i class="icon-circles"></i> {{ trans('messages.radio_field') }}</span>
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "date"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="date"><i class="icon-calendar52"></i> {{ trans('messages.date_field') }}</span>
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "datetime"]) }}" class="btn btn-default btn-xs add-custom-field-button me-2" type_name="datetime"><span class="material-icons-outlined">
 alarm
 </span> {{ trans('messages.datetime_field') }}</span>
-			<span sample-url="{{ action("Admin/FieldController@sample", ['list_uid' => $list->uid, "type" => "textarea"]) }}" class="btn btn-default btn-xs add-custom-field-button" type_name="textarea"><i class="icon-menu6"></i> {{ trans('messages.textarea_field') }}</span>
+			<span sample-url="{{ action("Admin\FieldController@sample", ['list_uid' => $list->uid, "type" => "textarea"]) }}" class="btn btn-default btn-xs add-custom-field-button" type_name="textarea"><i class="icon-menu6"></i> {{ trans('messages.textarea_field') }}</span>
 		</div>
 
 		<hr /><br />
