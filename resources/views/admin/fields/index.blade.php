@@ -36,7 +36,7 @@ fact_check
 		</div>
 	@endif
 
-	<form action="{{ action('Admin/FieldController@store', $list->uid) }}" class="listing-form"
+	<form action="{{ action('Admin\FieldController@store', $list->uid) }}" class="listing-form"
 		sort-urla="{{ action('Admin/FieldController@sort', $list->uid) }}"
 		per-page="1"
 		method="POST"
