@@ -3,6 +3,7 @@
 namespace Acelle\Http\Controllers\Admin;
 
 use Acelle\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Acelle\Events\MailListSubscription;
 use Acelle\Model\Setting;
