@@ -59,4 +59,8 @@ class CustomerController extends Controller
             'next_billing_date' => $next_billing_date,
         ]);
     }
+
+    public function builder(){
+        return view('formBuilder');
+    }
 }

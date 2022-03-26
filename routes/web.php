@@ -453,6 +453,7 @@ Route::group(['middleware' => ['not_installed', 'auth', 'frontend', 'subscriptio
     Route::match(['get', 'post'], 'lists/{uid}/embedded-form', 'MailListController@embeddedForm');
     Route::get('lists/{uid}/embedded-form-frame', 'MailListController@embeddedFormFrame');
 
+ Route::get('builder/form', 'CustomerController@builder');
     // Field
     Route::get('lists/{list_uid}/fields', 'FieldController@index');
     Route::get('lists/{list_uid}/fields/sort', 'FieldController@sort');
