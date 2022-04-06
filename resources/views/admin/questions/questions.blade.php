@@ -155,42 +155,42 @@
                                         </div>
                                         <div class="modal-body">
                                            <div class="card-inner p-0">
-                                <div class="nk-tb-list nk-tb-ulist">
-                                    <div class="nk-tb-item nk-tb-head">
-                                      
-                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">ID</span></div>
-                                        <div class="nk-tb-col"><span class="sub-text">Option</span></div>
-                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Icon</span></div>
-                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Created At</span></div>
-                                        
-                                    </div><!-- .nk-tb-item -->  
-                                    @foreach($question->choices as $option)
-                                    <div class="nk-tb-item">
-                                    
-                                        <div class="nk-tb-col">
-                                           <span>{{$option->id}}</span>
+                                            <div class="nk-tb-list nk-tb-ulist">
+                                                <div class="nk-tb-item nk-tb-head">
+                                                  
+                                                    <div class="nk-tb-col tb-col-lg"><span class="sub-text">ID</span></div>
+                                                    <div class="nk-tb-col"><span class="sub-text">Option</span></div>
+                                                    <div class="nk-tb-col tb-col-mb"><span class="sub-text">Icon</span></div>
+                                                    <div class="nk-tb-col tb-col-lg"><span class="sub-text">Created At</span></div>
+                                                    
+                                                </div><!-- .nk-tb-item -->  
+                                                @foreach($question->choices as $option)
+                                                <div class="nk-tb-item">
+                                                
+                                                    <div class="nk-tb-col">
+                                                       <span>{{$option->id}}</span>
+                                                    </div>
+                                                    <div class="nk-tb-col tb-col-mb">
+                                                        <span class="tb-amount">{{$option->choice}}</span>
+                                                    </div>
+                                                    <div class="nk-tb-col tb-col-mb" style="width: 20%;">
+                                                        <span><img src="{{asset('frontend-assets/images/categories/'.$option->icon)}}"></span>
+                                                    </div>
+                                                    <div class="nk-tb-col tb-col-lg">
+                                                        <span>{{$option->created_at}}</span>
+                                                    </div>
+                                                    
+                                                    
+                                                </div><!-- .nk-tb-item -->
+                                                @endforeach
+                                              
+                                            </div><!-- .nk-tb-list -->
+                                        </div><!-- .card-inner -->
+                                                    </div>
+                                                  
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="nk-tb-col tb-col-mb">
-                                            <span class="tb-amount">{{$option->choice}}</span>
-                                        </div>
-                                        <div class="nk-tb-col tb-col-mb" style="width: 20%;">
-                                            <span><img src="{{asset('frontend-assets/images/categories/'.$option->icon)}}"></span>
-                                        </div>
-                                        <div class="nk-tb-col tb-col-lg">
-                                            <span>{{$option->created_at}}</span>
-                                        </div>
-                                        
-                                        
-                                    </div><!-- .nk-tb-item -->
-                                    @endforeach
-                                  
-                                </div><!-- .nk-tb-list -->
-                            </div><!-- .card-inner -->
-                                        </div>
-                                      
-                                    </div>
-                                </div>
-                            </div>
     <!-- Mopdal Small -->
                                     </div><!-- .nk-tb-item -->
                                     @endforeach

@@ -53,9 +53,9 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $choices = array_values($request->choice);
         $choice_icon = array_values($request->choice_icon);
+        // dd($choices);
 
         foreach (array_values($request->check) as $key => $que) {
 
@@ -87,10 +87,10 @@ class QuestionController extends Controller
 
             $question_choice->save();
 
-           return redirect('admin/questions')->withSuccess(['Success Message here!']);
-
-            }  
+            } 
+             
         }
+           return redirect('admin/questions')->withSuccess(['Success Message here!']);
 
 
     }
