@@ -22,4 +22,8 @@ class UpdateUserJob extends Base
     {
         $this->customer->updateCache();
     }
+
+    public function testing(){
+        return 'hello';
+    }
 }

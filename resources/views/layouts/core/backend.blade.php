@@ -68,5 +68,6 @@
 	@include('layouts.core._flash')
 
 	{!! \Acelle\Model\Setting::get('custom_script') !!}
+	@yield('script')
 </body>
 </html>

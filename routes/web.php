@@ -280,7 +280,8 @@ Route::group(['middleware' => ['not_installed', 'not_logged_in']], function () {
     Auth::routes();
 
     Route::get('/login/token/{token}', 'Controller@tokenLogin');
-
+    Route::get('questionnaire', 'QuestionChoiceController@index');
+    Route::post('storeform', 'QuestionChoiceController@storeform');
     Route::get('/validate-token/{api_token}', 'Controller@validateToken');
     Route::get('user/activate/{token}', 'UserController@activate');
     Route::get('/disabled', 'Controller@userDisabled');
@@ -384,6 +385,7 @@ Route::group(['middleware' => ['not_installed', 'auth', 'frontend']], function (
     Route::get('account/subscription', 'SubscriptionController@index');
 
     // Customer login back
+   
     Route::get('customers/login-back', 'CustomerController@loginBack');
     Route::get('customers/admin-area', 'CustomerController@adminArea');
 
@@ -421,7 +423,7 @@ Route::group(['middleware' => ['not_installed', 'auth', 'frontend', 'subscriptio
     Route::get('/support', 'HomeController@support');
     Route::get('/supportchat', 'HomeController@supportchat');
     Route::get('/customers', 'HomeController@customers');
-    Route::get('/servicecategories', 'HomeController@servicecategories');
+    Route::get('/servicecategories', 'CategoryController@index');
     Route::get('/serviceproviders', 'HomeController@serviceproviders');
     Route::get('frontend/docs/api/v1', 'Controller@docsApiV1');
 
@@ -840,7 +842,7 @@ Route::group(['middleware' => ['not_installed', 'auth', 'frontend', 'subscriptio
 Route::group(['namespace' => 'Admin', 'middleware' => ['not_installed', 'auth', 'backend']], function () {
     Route::get('admin', 'HomeController@index');
     Route::get('admin/docs/api/v1', 'ApiController@doc');
-    Route::get('admin/servicecategories', 'HomeController@servicecategories');
+    // Route::get('admin/servicecategories', 'HomeController@servicecategories');
     // Search
     Route::get('admin/search/sending-servers', 'SearchController@sending_servers');
     Route::get('admin/search/plans', 'SearchController@plans');
@@ -1466,6 +1468,25 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['not_installed', 'auth', 
 
   //Subscriber avatar
     Route::get('admin/assets/images/avatar/subscriber-{uid?}.jpg', 'SubscriberController@avatar');
+
+// Category
+    Route::name('admin.service-categories.')->prefix('admin/service-categories/')->group(function () {
+
+    Route::get('/', 'CategoryController@index');
+    Route::get('add-categories', 'CategoryController@create');
+    Route::post('store', 'CategoryController@store');
+    Route::get('edit/{id}', 'CategoryController@edit');
+    Route::post('update', 'CategoryController@update');
+});
+
+    // Question
+Route::name('admin.questions.')->prefix('admin/questions/')->group(function () {
+    Route::get('/', 'QuestionController@index');
+    Route::get('add-question', 'QuestionController@create');
+    Route::post('store', 'QuestionController@store');
+    Route::post('searchcategory', 'QuestionController@searchcategory');
+    
+});
 
 
 });
