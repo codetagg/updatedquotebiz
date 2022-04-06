@@ -29,18 +29,7 @@
                                 <div class="toggle-expand-content" data-content="pageMenu">
                                     <ul class="nk-block-tools g-3">
                                      
-                                        <li class="nk-block-tools-opt">
-                                            <div class="drodown">
-                                                <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><span>Add User</span></a></li>
-                                                        <li><a href="#"><span>Add Team</span></a></li>
-                                                        
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
+                                          <li class="nk-block-tools-opt"><a href="{{ action('Admin\QuestionController@create') }}" class="btn btn-primary" ><em class="icon ni ni-plus"></em><span>Add Question</span></a></li>
                                     </ul>
                                 </div>
                             </div><!-- .toggle-wrap -->
